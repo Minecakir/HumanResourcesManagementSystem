@@ -18,6 +18,6 @@ public class Job {
     @Column(name="id")
     private int id;
 
-    @Column(name="job_title")
+    @Column(name="title")
     private String jobTitle;
 }
