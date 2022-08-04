@@ -1,5 +1,6 @@
 package com.example.hrms.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -34,4 +35,10 @@ public class Employer extends User {
     @Pattern(regexp = "^\\d{11}$")
     @Column(name = "phone_number")
     private String phoneNumber;
+
+/*    @JsonIgnore
+    @MapsId
+    @OneToOne
+    @JoinColumn(name = "id")
+    private User user;*/
 }

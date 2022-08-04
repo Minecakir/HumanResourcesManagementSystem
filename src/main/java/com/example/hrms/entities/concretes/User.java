@@ -23,6 +23,7 @@ public class User {
     @Column(name="email")
     @Email
     @NotBlank
+    @NotNull
     private String email;
 
     @Column(name="password")
