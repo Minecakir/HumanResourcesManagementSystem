@@ -49,8 +49,8 @@ public class CandidateManager implements CandidateService {
         {
             return new ErrorResult("Wrong user information!");
         }
-        if(this.getByEmail(candidate.getEmail()).getData()!=null || this.getByIdentityNumber(candidate.getIdentityNumber()).getData()!=null)
-        {
+        if(this.candidateDao.existsCandidateByEmail(candidate.getEmail()) ||
+        this.candidateDao.existsCandidateByIdentityNumber(candidate.getIdentityNumber())) {
             return new ErrorResult("User has already exist!");
         }
         this.candidateDao.save(candidate);
