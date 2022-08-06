@@ -13,14 +13,12 @@ import java.util.List;
 @Service
 public class CandidateManager implements CandidateService {
     private CandidateDao candidateDao;
-    private MernisCheckService mernisCheckService;
 
     @Autowired
     public CandidateManager(CandidateDao candidateDao, MernisCheckService mernisCheckService)
     {
         super();
         this.candidateDao = candidateDao;
-        this.mernisCheckService = mernisCheckService;
     }
 
     @Override
@@ -44,11 +42,6 @@ public class CandidateManager implements CandidateService {
 
     @Override
     public Result add(Candidate candidate) {
-
-        if(this.mernisCheckService.checkIfRealPerson(candidate).isSuccess())
-        {
-            return new ErrorResult("Wrong user information!");
-        }
         if(this.candidateDao.existsCandidateByEmail(candidate.getEmail()) ||
         this.candidateDao.existsCandidateByIdentityNumber(candidate.getIdentityNumber())) {
             return new ErrorResult("User has already exist!");

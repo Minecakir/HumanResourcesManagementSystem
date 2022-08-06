@@ -7,6 +7,7 @@ import com.example.hrms.entities.concretes.Candidate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -35,7 +36,7 @@ public class CandidatesController {
     }
 
     @PostMapping("/add")
-    public Result add(@RequestBody Candidate candidate) {
+    public Result add(@Valid @RequestBody Candidate candidate) {
         return this.candidateService.add(candidate);
     }
 }
