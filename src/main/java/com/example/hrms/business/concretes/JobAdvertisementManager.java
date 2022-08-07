@@ -1,10 +1,7 @@
 package com.example.hrms.business.concretes;
 
 import com.example.hrms.business.abstracts.JobAdvertisementService;
-import com.example.hrms.core.utilities.results.DataResult;
-import com.example.hrms.core.utilities.results.Result;
-import com.example.hrms.core.utilities.results.SuccessDataResult;
-import com.example.hrms.core.utilities.results.SuccessResult;
+import com.example.hrms.core.utilities.results.*;
 import com.example.hrms.dataAccess.abstracts.JobAdvertisementDao;
 import com.example.hrms.entities.concretes.JobAdvertisement;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,5 +45,20 @@ public class JobAdvertisementManager implements JobAdvertisementService {
     @Override
     public DataResult<List<JobAdvertisement>> findByIsActiveTrueAndEmployer_CompanyName(String companyName) {
         return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.findByIsActiveTrueAndEmployer_CompanyName(companyName));
+    }
+
+    @Override
+    public Result delete(int id) {
+         if (this.jobAdvertisementDao.existsById(id))
+         {
+                this.jobAdvertisementDao.deleteById(id);
+                return new SuccessResult("Job advertisement is deleted.");}
+         return new ErrorResult("Job advertisement not found");
+    }
+
+    @Override
+    public Result deleteAll() {
+        this.jobAdvertisementDao.deleteAll();
+        return new SuccessResult("All job advertisements are deleted.");
     }
 }

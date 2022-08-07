@@ -12,5 +12,6 @@ public interface JobAdvertisementService {
     DataResult<List<JobAdvertisement>> getAllActive();
     DataResult<List<JobAdvertisement>> findByIsActiveTrueOrderByPublishDate();
     DataResult<List<JobAdvertisement>> findByIsActiveTrueAndEmployer_CompanyName(String companyName);
-
+    Result delete(int id);
+    Result deleteAll();
 }
