@@ -2,6 +2,7 @@ package com.example.hrms.entities.concretes;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -15,14 +16,10 @@ import java.util.Date;
 @Table(name="candidates")
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(callSuper = false)
 @PrimaryKeyJoinColumn(name="id", referencedColumnName = "id")
 
 public class Candidate extends User{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id;
-
     @NotNull
     @NotBlank
     @Column(name="first_name")
@@ -42,5 +39,4 @@ public class Candidate extends User{
     @NotNull
     @Column(name = "birth_year")
     private Date birthYear;
-
 }
