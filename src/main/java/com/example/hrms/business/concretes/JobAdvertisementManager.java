@@ -61,4 +61,16 @@ public class JobAdvertisementManager implements JobAdvertisementService {
         this.jobAdvertisementDao.deleteAll();
         return new SuccessResult("All job advertisements are deleted.");
     }
+
+    @Override
+    public Result deactivateJobAdvertisement(int id) {
+        if(this.jobAdvertisementDao.existsById(id)){
+            JobAdvertisement updatedJobAdvertisement;
+            updatedJobAdvertisement = this.jobAdvertisementDao.getById(id);
+            updatedJobAdvertisement.setIsActive(false);
+            this.jobAdvertisementDao.save(updatedJobAdvertisement);
+            return new SuccessResult("Job advertisement deactivated.");
+        }
+        return new ErrorResult("No job advertisement found.");
+    }
 }

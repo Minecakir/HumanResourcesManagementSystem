@@ -14,4 +14,5 @@ public interface JobAdvertisementService {
     DataResult<List<JobAdvertisement>> findByIsActiveTrueAndEmployer_CompanyName(String companyName);
     Result delete(int id);
     Result deleteAll();
+    Result deactivateJobAdvertisement(int id);
 }

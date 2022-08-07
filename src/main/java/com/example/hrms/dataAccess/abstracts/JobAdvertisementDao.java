@@ -12,4 +12,5 @@ public interface JobAdvertisementDao extends JpaRepository<JobAdvertisement,Inte
     List<JobAdvertisement> findByIsActiveTrueAndEmployer_CompanyName(String companyName);
     Result deleteById(int id);
     Boolean existsById(int id);
+    JobAdvertisement getById(int id);
 }

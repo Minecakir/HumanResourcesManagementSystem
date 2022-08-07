@@ -3,11 +3,9 @@ package com.example.hrms.api.controllers;
 import com.example.hrms.business.abstracts.JobAdvertisementService;
 import com.example.hrms.core.utilities.results.DataResult;
 import com.example.hrms.core.utilities.results.Result;
-import com.example.hrms.core.utilities.results.SuccessResult;
 import com.example.hrms.entities.concretes.JobAdvertisement;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -42,4 +40,9 @@ public class JobAdvertisementsController {
 
     @DeleteMapping("/deleteAll")
     public Result deleteAll(){return this.jobAdvertisementService.deleteAll();}
+
+    @PostMapping(value = "/deactivate")
+    Result deactivateJobAdvertisement(int id) {
+        return this.jobAdvertisementService.deactivateJobAdvertisement(id);
+    }
 }
