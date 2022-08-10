@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Data
@@ -17,9 +19,13 @@ public class ForeignLanguage {
     @Column(name = "id")
     private int id;
 
+    @NotNull
+    @NotBlank
     @Column(name = "language")
     private String language;
 
+    @NotNull
+    @NotBlank
     @Column(name = "level")
     private String level;
 }
