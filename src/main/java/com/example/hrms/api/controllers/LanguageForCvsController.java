@@ -20,8 +20,8 @@ public class LanguageForCvsController {
     public LanguageForCvsController(LanguageForCvService languageForCvService){this.languageForCvService = languageForCvService;}
 
     @GetMapping("/getAll")
-    DataResult<List<LanguageForCv>> getAll(){return this.languageForCvService.getAll();};
+    public DataResult<List<LanguageForCv>> getAll(){return this.languageForCvService.getAll();};
 
     @PostMapping("/add")
-    Result add(LanguageForCv languageForCv){return this.languageForCvService.add(languageForCv);};
+    public Result add(LanguageForCv languageForCv){return this.languageForCvService.add(languageForCv);};
 }

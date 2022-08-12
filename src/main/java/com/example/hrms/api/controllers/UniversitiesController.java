@@ -7,7 +7,6 @@ import com.example.hrms.entities.concretes.University;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import javax.xml.crypto.Data;
 import java.util.List;
 
 @RestController

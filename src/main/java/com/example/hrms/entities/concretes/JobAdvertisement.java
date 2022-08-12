@@ -14,7 +14,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "job_advertisements")
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobs","cities","employers"})
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobPos","city","employer"})
 public class JobAdvertisement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
