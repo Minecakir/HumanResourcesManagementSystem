@@ -146,7 +146,9 @@ http://localhost:8080/api/jobs/addJob
 
 <img src="https://user-images.githubusercontent.com/67970973/184489788-5e59f4d9-37cf-4fcf-b318-03fea9bce7a4.png" width="600" />
 
- ### PROJECT REQUIREMENTS
+<h1 align="center">PROJECT DETAILS</h1>
+  
+ ### PROJECT REQUIREMENTS 🎯
   
 <details>
 <summary>CLICK TO LIST REQUIREMENTS</summary>
@@ -172,15 +174,15 @@ Accept conditions:
      <summary>Test</summary>
      <br>
       
-     - All Fields are Required
+     - **All Fields are Required**
       
      <img src="https://user-images.githubusercontent.com/67970973/184493143-d6d38a5b-16ca-49fd-9a98-c2c2a747cf89.png" width="600" />
       
-     - Add Candidate with name, surname, tcno, year of birth, e-mail, password
+     - **Add Candidate with name, surname, tcno, year of birth, e-mail, password**
       
      <img src="https://user-images.githubusercontent.com/67970973/184493624-86c46658-a48e-45f2-9209-8ad0f6c5739d.png" width="600" />
      
-     - Previously Registered
+     - **Previously Registered**
      
      <img src="https://user-images.githubusercontent.com/67970973/184493688-8b0d4d8e-9b71-424d-889b-931b1bd93a6e.png" width="600" />
   </details>
@@ -202,15 +204,15 @@ Accept conditions:
      <summary>Test</summary>
      <br>
       
-     - All Fields are Required
+     - **All Fields are Required**
     
      <img src="https://user-images.githubusercontent.com/67970973/184494383-e1455aa1-0230-41b3-8248-cc2ad1767fdc.png" width="600" />
       
-     - Add Employer with company name, website, e-mail
+     - **Add Employer with company name, website, e-mail**
 
      <img src="https://user-images.githubusercontent.com/67970973/184494276-dda12787-ed85-4f02-a3a7-5de57ffa52f4.png" width="600" />
      
-     - Previously Registered E-mail
+     - **Previously Registered E-mail**
 
      <img src="https://user-images.githubusercontent.com/67970973/184494321-2544414b-1a78-4221-8259-c9772e5ef0f7.png" width="600" />
   </details>
@@ -229,11 +231,11 @@ Accept conditions:
      <summary>Test</summary>
      <br>
       
-     - Add Job Position
+     - **Add Job Position**
       
      <img src="https://user-images.githubusercontent.com/67970973/184489788-5e59f4d9-37cf-4fcf-b318-03fea9bce7a4.png" width="600" />
      
-     - Positions Cannot Be Repeated
+     - **Positions Cannot Be Repeated**
       
      <img src="https://user-images.githubusercontent.com/67970973/184494769-aa9c1196-a11e-4bf5-8a29-8577dba52d11.png" width="600" />
   </details>
@@ -294,9 +296,98 @@ Accept conditions:
  <details>
      <summary>Test</summary>
      <br>
-     <img src="" width="600" />
+     <img src="https://user-images.githubusercontent.com/67970973/184532623-82f39b02-8c98-4073-a6ba-dd7af4972d28.png" width="600" />
   </details>
   </details>
+  
+  <details>
+  <summary>Req-8</summary>
+  <br>
+
+  **Req 8 : All active job postings in the system should be listed.**
+      
+  - The list should come in tabular form.
+  - Company name, general job position name, number of open positions, publication date, deadline should be in the list.
+ <details>
+     <summary>Test</summary>
+     <br>
+     <img src="https://user-images.githubusercontent.com/67970973/184532738-bc94ebe6-5a58-4ac8-b4d3-bc3332070aab.png" width="600" />
+  </details>
+  </details>
+
+  <details>
+  <summary>Req-9</summary>
+  <br>
+
+  **Req 9 : All active job postings in the system should be listed by date.**
+      
+  - The list should come in tabular form.
+  - Company name, general job position name, number of open positions, publication date, deadline should be in the list.
+ <details>
+     <summary>Test</summary>
+     <br>
+     <img src="https://user-images.githubusercontent.com/67970973/184532829-a51b8a23-9638-4a0c-8ffc-42f3e054f90b.png" width="600" />
+  </details>
+  </details>
+
+  <details>
+  <summary>Req-10</summary>
+  <br>
+
+  **Req 10: All active job postings of a company should be listed in the system.**
+      
+  - The list should come in tabular form.
+  - Company name, general job position name, number of open positions, publication date, deadline should be in the list.
+ <details>
+     <summary>Test</summary>
+     <br>
+     <img src="https://user-images.githubusercontent.com/67970973/184532913-5f302d0f-934e-4bbe-8aa8-1ea7a7dbdfaf.png" width="600" />
+  </details>
+  </details>
+  
+  <details>
+  <summary>Req-11</summary>
+  <br>
+
+  **Req 11 : Employers should be able to close a posting in the system. (Passive posting)**
+      
+ <details>
+     <summary>Test</summary>
+     <br>
+   
+   - **Deactivate job adveritsement with job id**
+   
+   <img src="https://user-images.githubusercontent.com/67970973/184532999-f776a715-54d3-408c-a144-91fdb23705d1.png" width="600" />
+   
+   - **Job advertisement is deactivated**
+   
+   <img src="https://user-images.githubusercontent.com/67970973/184533081-43496305-2bef-49e1-9b98-c6eb8f5c58d9.png" width="600" />
+   
+  </details>
+  </details>
+  
+  <details>
+  <summary>Req-12</summary>
+  <br>
+
+  **Req 12: Candidates should be able to enter their CV into the system.**
+      
+  - Candidates should be able to add their schools to the system. (School name, department)
+  - These schools should be able to enter the years they studied in the system.
+  - If he has not graduated, the graduation year should be blank.
+  - The schools attended by the candidates should be in reverse order according to the graduation year. If not graduated, this school should be displayed at the top and as "in progress".
+  - Candidates should be able to enter their work experience. (Business name, position)
+  - They should be able to enter into the system in which years they have done this experience.
+  - If he is still working, the year of leaving should be blank.
+  - Candidates' experience should be in reverse order by year. If it is still running, this experience should still be displayed at the top and "in progress".
+  - Candidates should be able to enter the foreign languages ​​they know into the system. ( Language, Level -> 1-5)
+  - Candidates must be able to enter photos into the system. The photo of the candidate will be kept in the https://cloudinary.com/pricing system. (External service integration) Use the free account.
+  - Candidates should be able to enter their github addresses into the system.
+  - Candidates should be able to enter their linkedin addresses into the system.
+  - Candidates should be able to enter the programming languages ​​or technologies they know into the system. (Programming/Technology name) For example; React
+  - Candidates should be able to add a cover letter to the system. (For example: I like working very much....)
+  </details>
+  
 
  </details>
   
