@@ -61,4 +61,7 @@ public class JobAdvertisement {
 
     @Column(name = "is_active")
     private Boolean isActive;
+
+    @Column(name = "deleted", nullable = false)
+private boolean deleted = false;
 }
