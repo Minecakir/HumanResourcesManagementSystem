@@ -21,6 +21,15 @@ public class JobAdvertisementsController {
         this.jobAdvertisementService = jobAdvertisementService;
     }
 
+    @GetMapping("/search")
+public DataResult<List<JobAdvertisement>> searchJobs(@RequestParam(required = false) String location,
+                                                     @RequestParam(required = false) Integer minSalary,
+                                                     @RequestParam(required = false) Integer maxSalary,
+                                                     @RequestParam(required = false) String jobType) {
+    return jobAdvertisementService.searchJobs(location, minSalary, maxSalary, jobType);
+}
+
+
     @GetMapping("/getAll")
     public DataResult<List<JobAdvertisement>> getAll(){return this.jobAdvertisementService.getAll();}
 
