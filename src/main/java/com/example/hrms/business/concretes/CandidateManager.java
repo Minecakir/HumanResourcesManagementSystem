@@ -22,8 +22,9 @@ public class CandidateManager implements CandidateService {
     }
 
     @Override
-    public DataResult<List<Candidate>> getAll() {
-        return new SuccessDataResult<List<Candidate>>(this.candidateDao.findAll(),"All candidates are listed.");
+    public DataResult<List<Candidate>> getAll(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return new SuccessDataResult<>(candidateDao.findAll(pageable).getContent());
     }
 
     @Override
