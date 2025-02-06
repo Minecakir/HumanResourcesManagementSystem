@@ -8,7 +8,7 @@ import com.example.hrms.entities.concretes.Candidate;
 import java.util.List;
 
 public interface CandidateService {
-    DataResult<List<Candidate>> getAll();
+    DataResult<List<Candidate>> getAll(int page, int size);
 
     DataResult<Candidate> getByEmail(String email);
 
