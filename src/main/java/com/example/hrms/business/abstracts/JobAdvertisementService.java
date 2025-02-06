@@ -15,4 +15,5 @@ public interface JobAdvertisementService {
     Result delete(int id);
     Result deleteAll();
     Result deactivateJobAdvertisement(int id);
+    DataResult<List<JobAdvertisement>> searchJobs(String location, Integer minSalary, Integer maxSalary, String jobType);
 }
