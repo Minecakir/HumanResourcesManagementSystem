@@ -57,4 +57,8 @@ public class CandidateManager implements CandidateService {
     emailService.sendVerificationEmail(candidate.getEmail());
     return new SuccessResult("Registration successful. Please verify your email.");
 }
+
+    public void sendVerificationEmail(String email) {
+    // Logic to send an email with a verification link
+}
 }
