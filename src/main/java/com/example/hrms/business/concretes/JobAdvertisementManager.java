@@ -31,6 +31,11 @@ public class JobAdvertisementManager implements JobAdvertisementService {
     }
 
     @Override
+public DataResult<List<JobAdvertisement>> searchJobs(String location, Integer minSalary, Integer maxSalary, String jobType) {
+    return new SuccessDataResult<>(jobAdvertisementDao.findByFilters(location, minSalary, maxSalary, jobType));
+}
+
+    @Override
     public DataResult<List<JobAdvertisement>> getAllActive() {
         return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.findByIsActiveTrue(),"Active jobs are listed.");
     }
