@@ -21,10 +21,11 @@ public class CandidatesController {
     }
 
     @GetMapping("/getAll")
-    public DataResult<List<Candidate>> getAll() {
+    public DataResult<List<Candidate>> getAll(@RequestParam(defaultValue = "0") int page,
+                                          @RequestParam(defaultValue = "10") int size) {
         candidateService.logToMetrics();
         candidateService.deleteAll();
-        return this.candidateService.getAll();
+        return this.candidateService.getAll(page, size);
     }
 
     @GetMapping("/getByEmail")

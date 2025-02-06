@@ -1,0 +1,9 @@
+@ControllerAdvice
+public class GlobalExceptionHandler {
+    @ExceptionHandler(Exception.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    @ResponseBody
+    public ErrorResponse handleAllExceptions(Exception ex) {
+        return new ErrorResponse("An error occurred", ex.getMessage());
+    }
+}

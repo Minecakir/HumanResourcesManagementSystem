@@ -22,15 +22,25 @@ public class CloudinaryAdapter {
             "secure", true));
 
     public static DataResult<Object> uploadImage(MultipartFile multipartFile) throws IOException {
+        multipartFile = validate(multipartFile);
         File file = convert(multipartFile);
         Map uploadResult = cloudinary.uploader().upload(file, ObjectUtils.emptyMap());
         return new SuccessDataResult<Object>(uploadResult.get("url"));
+    }
+
+    private static MultipartFile validate(MultipartFile multipartFile){
+        if((multipartFile).isValid()){
+            if(multipartFile.hasProperEncriptionKey())
+                return multipartFile;
+        }
+        return null;
     }
 
     public static Result delete(String id) throws IOException {
         Map result = cloudinary.uploader().destroy(id, ObjectUtils.emptyMap());
         return new SuccessResult(result.toString());
     }
+
 
     public static File convert(MultipartFile multipartFile) throws IOException {
         File file = new File(multipartFile.getOriginalFilename());
