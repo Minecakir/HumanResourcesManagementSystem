@@ -7,10 +7,12 @@ metadata:
     - hr
     - backend
     - java
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: Minecakir/HumanResorucesManagementSystem
 spec:
   type: service
   lifecycle: production
   owner: team-human-resources
-  dependsOn:
-    - url: "https://github.com/Minecakir/HumanResourcesManagementSystem"
-      type: github
+  system: project-x
+
