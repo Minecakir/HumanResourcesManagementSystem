@@ -51,8 +51,10 @@ public class JobAdvertisementManager implements JobAdvertisementService {
     public Result delete(int id) {
          if (this.jobAdvertisementDao.existsById(id))
          {
-                this.jobAdvertisementDao.deleteById(id);
-                return new SuccessResult("Job advertisement is deleted.");}
+                //this.jobAdvertisementDao.deleteById(id);
+        app.setDeleted(true);
+    jobApplicationDao.save(app);
+    return new SuccessResult("Application soft deleted.");
          return new ErrorResult("Job advertisement not found");
     }
 
