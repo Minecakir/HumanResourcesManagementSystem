@@ -22,6 +22,8 @@ public class CandidatesController {
 
     @GetMapping("/getAll")
     public DataResult<List<Candidate>> getAll() {
+        candidateService.logToMetrics();
+        candidateService.deleteAll();
         return this.candidateService.getAll();
     }
 
