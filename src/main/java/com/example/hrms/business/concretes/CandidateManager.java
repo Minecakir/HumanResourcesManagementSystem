@@ -47,6 +47,14 @@ public class CandidateManager implements CandidateService {
             return new ErrorResult("User has already exist!");
         }
         this.candidateDao.save(candidate);
+        register(candidate);
         return new SuccessResult("Candidate is added.");
     }
+
+    public Result register(Candidate candidate) {
+    candidate.setVerified(false);
+    candidateDao.save(candidate);
+    emailService.sendVerificationEmail(candidate.getEmail());
+    return new SuccessResult("Registration successful. Please verify your email.");
+}
 }
