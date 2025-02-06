@@ -12,5 +12,5 @@ spec:
   lifecycle: production
   owner: team-human-resources
   dependsOn:
-    - url: https://github.com/Minecakir/HumanResourcesManagementSystem
+    - url: "https://github.com/Minecakir/HumanResourcesManagementSystem"
       type: github
