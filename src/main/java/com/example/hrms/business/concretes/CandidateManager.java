@@ -22,8 +22,9 @@ public class CandidateManager implements CandidateService {
     }
 
     @Override
-    public DataResult<List<Candidate>> getAll() {
-        return new SuccessDataResult<List<Candidate>>(this.candidateDao.findAll(),"All candidates are listed.");
+    public DataResult<List<Candidate>> getAll(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return new SuccessDataResult<>(candidateDao.findAll(pageable).getContent());
     }
 
     @Override
@@ -47,6 +48,18 @@ public class CandidateManager implements CandidateService {
             return new ErrorResult("User has already exist!");
         }
         this.candidateDao.save(candidate);
+        register(candidate);
         return new SuccessResult("Candidate is added.");
     }
+
+    public Result register(Candidate candidate) {
+    candidate.setVerified(false);
+    candidateDao.save(candidate);
+    emailService.sendVerificationEmail(candidate.getEmail());
+    return new SuccessResult("Registration successful. Please verify your email.");
+}
+
+    public void sendVerificationEmail(String email) {
+    // Logic to send an email with a verification link
+}
 }

@@ -21,7 +21,7 @@ public class JobAdvertisementManager implements JobAdvertisementService {
     @Override
     public DataResult<List<JobAdvertisement>> getAll() {
         return new SuccessDataResult<List<JobAdvertisement>>
-                (this.jobAdvertisementDao.findAll(),"All job advertisements are listed.");
+                (this.jobAdvertisementDao.findAll(Sort.by(Sort.Direction.ASC, "postedDate"), Sort.by(Sort.Direction.ASC, "id")),"All job advertisements are listed.");
     }
 
     @Override
@@ -51,8 +51,10 @@ public class JobAdvertisementManager implements JobAdvertisementService {
     public Result delete(int id) {
          if (this.jobAdvertisementDao.existsById(id))
          {
-                this.jobAdvertisementDao.deleteById(id);
-                return new SuccessResult("Job advertisement is deleted.");}
+                //this.jobAdvertisementDao.deleteById(id);
+        app.setDeleted(true);
+    jobApplicationDao.save(app);
+    return new SuccessResult("Application soft deleted.");
          return new ErrorResult("Job advertisement not found");
     }
 

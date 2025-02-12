@@ -26,4 +26,7 @@ public class Job {
 
     @OneToMany(mappedBy="jobPos")
     private List<JobAdvertisement> jobAdvertisements;
+
+    @Column(name = "deleted", nullable = false)
+private boolean deleted = false;
 }
