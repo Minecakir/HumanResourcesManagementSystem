@@ -9,7 +9,7 @@ metadata:
     - java
   annotations:
     backstage.io/techdocs-ref: dir:.
-    github.com/project-slug: Minecakir/HumanResorucesManagementSystem
+    github.com/project-slug: Minecakir/HumanResourcesManagementSystem
 spec:
   type: service
   lifecycle: production
